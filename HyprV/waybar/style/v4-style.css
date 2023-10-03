@@ -44,7 +44,7 @@ tooltip label{
 }
 
 #custom-launch_wofi,
-#custom-launch_firefox,
+#custom-launch_brave,
 #custom-launch_thunderbird,
 #custom-launch_thunar,
 #custom-launch_kitty,
@@ -55,6 +55,7 @@ tooltip label{
 #custom-weather,
 #custom-myhyprv,
 #window,
+#ram,
 #cpu,
 #disk,
 #custom-updates,
@@ -91,7 +92,7 @@ tooltip label{
     margin-right: 20px;
 }
 
-#custom-launch_firefox, 
+#custom-launch_brave, 
 #custom-launch_thunderbird,
 #custom-launch_thunar,
 #custom-launch_wofi,
@@ -103,7 +104,7 @@ tooltip label{
     margin-right: 20px;
 }
 
-#custom-launch_firefox, 
+#custom-launch_brave, 
 #custom-launch_kitty {
     font-size: 20px;
 }
