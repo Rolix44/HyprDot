@@ -55,7 +55,7 @@ tooltip label{
 #custom-weather,
 #custom-myhyprv,
 #window,
-#ram,
+#memory,
 #cpu,
 #disk,
 #custom-updates,
@@ -107,4 +107,16 @@ tooltip label{
 #custom-launch_brave, 
 #custom-launch_kitty {
     font-size: 20px;
+}
+
+#network.vpn.disconnected{
+    color: red;
+}
+
+#network.local.disconnected{
+    color: red;
+}
+
+#network.local{
+    color: greenyellow;
 }

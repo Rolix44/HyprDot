@@ -17,20 +17,15 @@
         "custom/updates"
     ],
     "modules-right": [
-        "ram",
-        "cpu",
         "pulseaudio",
         "pulseaudio#microphone",
-        "backlight",
         "tray",
-        "temperature",
         "hyprland/language",
         "custom/light_dark"
     ],
     
     "include": [
         "~/.config/HyprV/waybar/conf/mesu.jsonc",
-        "~/.config/HyprV/waybar/conf/asus-rog.jsonc",
         "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"
     ],
 
@@ -81,34 +76,6 @@
         }
     },
 
-    "ram": {
-        "interval": 10,
-        "format":" {total}/{used}",
-        "max-length": 10,
-        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-    },
-
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10,
-        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-    },
-
-    "battery": {
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon}",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt-click": "click-right",
-        "format-alt": "{icon} {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
     "pulseaudio": {
         "format": "{icon}",
         "format-muted": "",
@@ -141,16 +108,6 @@
         "scroll-step": 5,
         "tooltip": true,
         "tooltip-format": " at {volume}%"
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-alt-click": "click-right",
-        "format-alt": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec"
     },
 
     "tray": {

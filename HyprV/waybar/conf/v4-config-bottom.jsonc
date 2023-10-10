@@ -7,40 +7,44 @@
     "gtk-layer-shell": true,
     "height": 25,
     "modules-left": [
-        "custom/launch_wofi",
-        "custom/launch_brave",
-        "custom/launch_kitty",
-        "custom/launch_thunar"
+        "cpu",
+        "memory",
+        "temperature",
+        "disk"
     ],
     "modules-center": ["wlr/taskbar"],
-    "modules-right": ["custom/weather"],
+    "modules-right": [
+        "network#local",
+        "network#vpn"],
 
-    "include": [
-        "~/.config/HyprV/waybar/conf/mesu.jsonc"
-    ],
 
-    "custom/launch_brave": {
-        "format": "",
-        "on-click": "brave",
-        "tooltip": false
+    "memory": {
+        "interval": 10,
+        "format":"󰍛 {used}/{total}Gb",
+        "max-length": 20,
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
 
-    "custom/launch_thunar": {
-        "format": "",
-        "on-click": "exec thunar",
-        "tooltip": false
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
 
-    "custom/launch_kitty": {
-        "format": "",
-        "on-click": "exec kitty",
-        "tooltip": false
-    },
-    
-    "custom/launch_wofi": {
-        "format": "󱗼",
-        "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/HyprV/wofi/config-lmenu)' & disown",
-        "tooltip": false
+    "temperature": {
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "interval": 5
+      },
+
+    "disk": {
+        "interval": 30,
+        "format": " {free}",
+        "max-length": 10,
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
 
     "wlr/taskbar": {
@@ -56,5 +60,22 @@
 	    "app_ids-mapping": {
 	        "steam_app_39210": "Final Fantasy 14"
 	    }
+    },
+
+    "network#local": {
+        "interface": "enp34s0",
+        "format-ethernet": "󰈁 {ipaddr}",
+        "format-disconnected": "󰈂",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+    "network#vpn": {
+        "interface": "tun0",
+        "format": "󰖂 {ipaddr}",
+        "format-disconnected": "󰖂 Down",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     }
 }

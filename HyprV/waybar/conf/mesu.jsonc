@@ -1,1 +1,6 @@
-/opt/HyprDot/HyprV/waybar/conf/mesu-imp.jsonc
+{
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{: %A, %e %B %Y}"
+    }
+}
